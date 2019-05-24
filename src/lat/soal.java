@@ -6,6 +6,7 @@
 package lat;
 
 import java.util.Random;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,20 +24,25 @@ public class soal extends javax.swing.JFrame {
     private class latihan extends setget {
 
         Random ran = new Random();
+        double z,f;
         int a = ran.nextInt(10);
 
         void tampil() {
-            super.setSoal("Tentukan sebuah luas persegi dengan panjang sisi " + a);
+            super.setSoal("Tentukan sebuah luas persegi dengan panjang sisi " +a);
             ta.setText(super.getSoal());
-            hasil.setText(Integer.toString(a));
+            hasil.setVisible(false);
+            double z = a*a*a;
+            hasil.setText(Double.toString(z));
+            
 
         }
 
         void jawab() {
-            if (jawab.getText() == hasil.getText()) {
-                System.out.println("Jawaban benar");
-            } else {
-                System.out.println("JawAban salah");
+            if(Double.parseDouble(jawab.getText()) == Double.parseDouble(hasil.getText())){
+                JOptionPane.showMessageDialog(null, "Jawaban anda benar");
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Jawaban anda salah");
             }
         }
 
@@ -105,6 +111,12 @@ public class soal extends javax.swing.JFrame {
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
+            }
+        });
+
+        hasil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hasilActionPerformed(evt);
             }
         });
 
@@ -189,7 +201,7 @@ public class soal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
-
+lihat.setText(hasil.getText());
 
     }//GEN-LAST:event_btViewActionPerformed
 
@@ -197,6 +209,10 @@ public class soal extends javax.swing.JFrame {
         latihan la = new latihan();
         la.tampil();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void hasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hasilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hasilActionPerformed
 
     /**
      * @param args the command line arguments
