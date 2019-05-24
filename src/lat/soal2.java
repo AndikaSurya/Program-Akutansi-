@@ -1,21 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lat;
 
-/**
- *
- * @author Asus
- */
-public class soal2 extends javax.swing.JFrame {
+import java.util.Random;
+import javax.swing.JOptionPane;
 
+public class soal2 extends javax.swing.JFrame {
+    
     /**
      * Creates new form soal2
      */
     public soal2() {
         initComponents();
+    }
+
+    private class latihan extends setget{
+         Random ran = new Random();
+        double z, f;
+        int a = ran.nextInt(10);
+        int b = ran.nextInt(10);
+        
+
+        void tampil() {
+            super.setSoal("Di ketahui ada sebuah persegi panjang memiliki panjang" + a + "cm , lebar "+b+ "cm ,maka carilah berapa keliling dari persegi panjang tersebut ? ");
+            ta.setText(super.getSoal());
+            hasil.setVisible(false);
+            double z = 2*(a+b);
+            hasil.setText(Double.toString(z));
+
+        }
+
+        void jawab() {
+            if (Double.parseDouble(jawab.getText()) == Double.parseDouble(hasil.getText())) {
+                JOptionPane.showMessageDialog(null, "Jawaban anda benar");
+            } else {
+                JOptionPane.showMessageDialog(null, "Jawaban anda salah");
+            }
+        }
     }
 
     /**
@@ -29,14 +49,15 @@ public class soal2 extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jaw = new javax.swing.JTextField();
+        jawab = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        butjawab = new javax.swing.JButton();
         btView = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        all = new javax.swing.JTextField();
+        lihat = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         ta = new javax.swing.JTextArea();
+        hasil = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -49,19 +70,19 @@ public class soal2 extends javax.swing.JFrame {
             }
         });
 
-        jaw.addActionListener(new java.awt.event.ActionListener() {
+        jawab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jawActionPerformed(evt);
+                jawabActionPerformed(evt);
             }
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Jawaban");
 
-        jButton3.setText("Jawab");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        butjawab.setText("Jawab");
+        butjawab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                butjawabActionPerformed(evt);
             }
         });
 
@@ -83,11 +104,20 @@ public class soal2 extends javax.swing.JFrame {
         ta.setRows(5);
         jScrollPane1.setViewportView(ta);
 
+        hasil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hasilActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 751, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(652, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -107,16 +137,19 @@ public class soal2 extends javax.swing.JFrame {
                                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jaw)
-                                        .addComponent(all, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
+                                        .addComponent(jawab)
+                                        .addComponent(lihat, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
                                     .addGap(21, 21, 21)
-                                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(butjawab, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(28, 28, 28)))
                     .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 439, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(350, Short.MAX_VALUE)
+                .addComponent(hasil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(6, 6, 6)
@@ -125,15 +158,15 @@ public class soal2 extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jaw, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jawab, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(btView)
                                 .addComponent(jButton4))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(all, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lihat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(27, 27, 27)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(butjawab, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -148,21 +181,27 @@ public class soal2 extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jawActionPerformed
+    private void jawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jawabActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jawActionPerformed
+    }//GEN-LAST:event_jawabActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void butjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butjawabActionPerformed
+        latihan la = new latihan();
+        la.jawab();
+    }//GEN-LAST:event_butjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
-
+lihat.setText(hasil.getText());
     }//GEN-LAST:event_btViewActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-
+latihan la = new latihan();
+        la.tampil();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void hasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hasilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hasilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -200,15 +239,16 @@ public class soal2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField all;
     private javax.swing.JButton btView;
+    private javax.swing.JButton butjawab;
+    private javax.swing.JTextField hasil;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jaw;
+    private javax.swing.JTextField jawab;
+    private javax.swing.JTextField lihat;
     private javax.swing.JTextArea ta;
     // End of variables declaration//GEN-END:variables
 }

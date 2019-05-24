@@ -51,7 +51,7 @@ public class soal1 extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jawab = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        butjawab = new javax.swing.JButton();
         btView = new javax.swing.JButton();
         ulang = new javax.swing.JButton();
         lihat = new javax.swing.JTextField();
@@ -79,10 +79,10 @@ public class soal1 extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Jawaban");
 
-        jButton3.setText("Jawab");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        butjawab.setText("Jawab");
+        butjawab.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                butjawabActionPerformed(evt);
             }
         });
 
@@ -141,7 +141,7 @@ public class soal1 extends javax.swing.JFrame {
                                 .addComponent(jawab)
                                 .addComponent(lihat, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
                             .addGap(21, 21, 21)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(butjawab, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGap(38, 38, 38)))
         );
         layout.setVerticalGroup(
@@ -165,7 +165,7 @@ public class soal1 extends javax.swing.JFrame {
                             .addComponent(lihat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGap(322, 322, 322)
-                            .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(butjawab, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -184,10 +184,10 @@ public class soal1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jawabActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void butjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butjawabActionPerformed
         latihan la = new latihan();
         la.jawab();
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_butjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
         lihat.setText(hasil.getText());
@@ -239,10 +239,10 @@ public class soal1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btView;
+    private javax.swing.JButton butjawab;
     private javax.swing.JTextField hasil;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jawab;
