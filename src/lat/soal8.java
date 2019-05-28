@@ -43,6 +43,7 @@ public class soal8 extends javax.swing.JFrame {
         void jawab() {
             if (Float.parseFloat(jawab.getText()) == Float.parseFloat(hasil.getText())) {
                 JOptionPane.showMessageDialog(null,"Jawaban Benar");
+                lihat.setText(hasil.getText());
             } else {
                 JOptionPane.showMessageDialog(null,"Jawaban Salah");
             }

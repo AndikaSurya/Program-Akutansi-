@@ -42,6 +42,7 @@ public class soal12 extends javax.swing.JFrame {
         void jawab() {
             if (Double.parseDouble(jawab.getText()) == Double.parseDouble(hasil.getText())) {
                 JOptionPane.showMessageDialog(null,"Jawaban Benar");
+                lihat.setText(hasil.getText());
             } else {
                 JOptionPane.showMessageDialog(null,"Jawaban Salah");
             }
