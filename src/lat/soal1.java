@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class soal1 extends javax.swing.JFrame {
 
     public soal1() {
-        initComponents();
+        initComponents();//sdfgh
     }
     
     private class s1 extends setget{
