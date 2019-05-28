@@ -16,6 +16,7 @@ public class Balok extends javax.swing.JPanel {
      */
     public Balok() {
         initComponents();
+        //jahvhxsycxuwcywcsxyusayuxv
     }
 //lalala
     /**
