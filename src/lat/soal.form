@@ -104,6 +104,9 @@
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JTextField" name="lihat">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="lihatActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -171,6 +174,9 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="hasil">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hasilActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

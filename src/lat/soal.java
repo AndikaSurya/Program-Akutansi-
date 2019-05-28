@@ -65,6 +65,12 @@ public class soal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        lihat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lihatActionPerformed(evt);
+            }
+        });
+
         ta.setColumns(20);
         ta.setRows(5);
         jScrollPane1.setViewportView(ta);
@@ -105,6 +111,12 @@ public class soal extends javax.swing.JFrame {
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
+            }
+        });
+
+        hasil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hasilActionPerformed(evt);
             }
         });
 
@@ -197,6 +209,14 @@ public class soal extends javax.swing.JFrame {
         latihan la = new latihan();
         la.tampil();
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void hasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hasilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hasilActionPerformed
+
+    private void lihatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lihatActionPerformed
 
     /**
      * @param args the command line arguments
