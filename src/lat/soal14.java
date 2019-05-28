@@ -1,30 +1,18 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package lat;
 
 import java.text.DecimalFormat;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Asus
- */
 public class soal14 extends javax.swing.JFrame {
 
-    /**
-     * Creates new form soal4
-     */
     public soal14() {
         initComponents();
     }
     
     private class s7 extends setget{
         Random ran = new Random();
-        
       
         int a = ran.nextInt(10);
         int b = ran.nextInt(10);
