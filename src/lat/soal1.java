@@ -18,7 +18,7 @@ public class soal1 extends javax.swing.JFrame {
      * Creates new form soal1
      */
     public soal1() {
-        initComponents();
+        initComponents();//sdfgh
     }
     
     private class s1 extends setget {
