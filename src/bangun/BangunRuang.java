@@ -180,7 +180,10 @@ public class BangunRuang extends javax.swing.JFrame {
     }//GEN-LAST:event_butKubusActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        PanelUtama p = new PanelUtama();
+        p.setVisible(true);
+        dispose();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void butBalokActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_butBalokActionPerformed

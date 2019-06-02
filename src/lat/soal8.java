@@ -60,6 +60,11 @@ public class soal8 extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Next");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +105,7 @@ public class soal8 extends javax.swing.JFrame {
 
         ta.setColumns(20);
         ta.setRows(5);
-        ta.setText("KLIK TOMBOL ULANG UNTUK MENAMPILKAN SOAL!");
+        ta.setText("Soal No.8\n\nKlik Tombol Ulang Untuk Menampilkan Soal!");
         jScrollPane1.setViewportView(ta);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -170,7 +175,9 @@ public class soal8 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-
+       soal9 q9 = new soal9();
+       q9.setVisible(true);
+       dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jawabActionPerformed
@@ -190,6 +197,12 @@ public class soal8 extends javax.swing.JFrame {
         s1 o = new s1();
         o.tampil();
     }//GEN-LAST:event_ulangActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        soal7 q7 = new soal7();
+        q7.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

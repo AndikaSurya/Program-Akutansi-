@@ -1,5 +1,5 @@
 package bangun;
-import lat.soal;
+import lat.soal1;
 public class PanelUtama extends javax.swing.JFrame {
 
     /**
@@ -119,7 +119,7 @@ public class PanelUtama extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        soal s = new soal();
+        soal1 s = new soal1();
         s.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton4ActionPerformed
