@@ -31,7 +31,7 @@ public class soal7 extends javax.swing.JFrame {
 
         void tampil() {
             super.setSoal("Ada sebuah trapesium yang memiliki panjang sisi yang sejajar berturut turut yaitu "+a+" cm dan "+b+" cm serta tinggi "+c+" cm.\n"
-                    + " hitunglah luas trapesium tersebut !");
+                    + " hitunglah luas trapesium tersebut !\n\n Jawaban Dalam Bentuk Desimal");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
            float z = (a+b)*c*1/2;

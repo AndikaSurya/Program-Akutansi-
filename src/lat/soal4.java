@@ -33,7 +33,7 @@ public class soal4 extends javax.swing.JFrame {
 
         void tampil() {
             super.setSoal("Ada sebuah lingkaran yang memiliki jari jari yaitu "+a+" cm \n"
-                    + " hitunglah luas lingkaran tersebut !");
+                    + " hitunglah luas lingkaran tersebut !\n\n Jawaban Dalam Bentuk Desimal");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
            float z = (float) (a*a*PI);

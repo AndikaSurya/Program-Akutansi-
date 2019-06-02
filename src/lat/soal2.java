@@ -19,7 +19,7 @@ public class soal2 extends javax.swing.JFrame {
 
         void tampil() {
             super.setSoal("Ada sebuah persegi panjang yang memiliki panjang yaitu " + a + " cm dan lebar yaitu " + b + " cm \n"
-                    + " hitunglah luas persegi panjang tersebut !");
+                    + " hitunglah luas persegi panjang tersebut !\n\n Jawaban Dalam Bentuk Desimal");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
             float z = a * b;

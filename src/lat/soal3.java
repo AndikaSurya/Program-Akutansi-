@@ -31,7 +31,7 @@ public class soal3 extends javax.swing.JFrame {
 
         void tampil() {
             super.setSoal("Terdapat sebuah bangun datar jajar genjang yang sisi miringnya memiliki panjang alasnya ialah "+a+" cm dan tingginya ialah "+b+" cm \n"
-                    + " Jadi berapa luas jajar genjang tersebut? ");
+                    + " Jadi berapa luas jajar genjang tersebut? \n\n Jawaban Dalam Bentuk Desimal");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
            float z = a*b;

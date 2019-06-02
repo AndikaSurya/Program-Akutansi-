@@ -31,8 +31,8 @@ public class soal5 extends javax.swing.JFrame {
         //int c = ran.nextInt(60);
 
         void tampil() {
-            super.setSoal("Ada sebuah lingkaran yang memiliki sisi yaitu "+a+" cm dan "+b+"\n"
-                    + " hitunglah luas lingkaran tersebut !");
+            super.setSoal("Ada sebuah Segitiga yang memiliki tinggi yaitu "+a+" cm dan alas"+b+" cm\n"
+                    + " hitunglah luas segitiga tersebut !\n\n Jawaban Dalam Bentuk Desimal");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
            float z = a*b*1/2;

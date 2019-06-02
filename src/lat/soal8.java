@@ -19,7 +19,7 @@ public class soal8 extends javax.swing.JFrame {
 
         void tampil() {
             super.setSoal("Tangki air berbentuk prisma persegi panjang memiliki panjang "+a+" cm, lebar "+b+" cm, dan tingginya "+c+" cm .\n"
-                    + "Tentukan volume tangki tersebut!");
+                    + "Tentukan volume tangki tersebut!\n\n Jawaban Dalam Bentuk Desimal");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
            float z = a*b*c;
