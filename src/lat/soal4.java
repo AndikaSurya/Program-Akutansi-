@@ -206,14 +206,14 @@ public class soal4 extends javax.swing.JFrame {
     }//GEN-LAST:event_jawabActionPerformed
 
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
-s4 o = new s4();
+        s4 o = new s4();
        o.jawab();
        jawab.setEditable(false);
     }//GEN-LAST:event_btjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
-lihat.setText(hasil.getText());
-jawab.setEditable(false);
+       lihat.setText(hasil.getText());
+       jawab.setEditable(false);
 
     }//GEN-LAST:event_btViewActionPerformed
 
