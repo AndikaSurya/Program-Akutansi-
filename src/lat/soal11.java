@@ -31,12 +31,12 @@ public class soal11 extends javax.swing.JFrame {
         
 
         void tampil() {
-            super.setSoal("Tentuka nvolume kerucut yang memiliki  jari jari alas "+b+" cm dan tinggi "+a+" cm\n\n"
-                                + "Keterangan: hasil berbentuk desimal dengan dua angka dibelakang koma");
+            super.setSoal("Tentuka volume kerucut yang memiliki  jari jari alas "+b+" cm dan tinggi "+a+" cm");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
             double z = 0.3*p*b*b*a;
-            DecimalFormat df = new DecimalFormat("0.00");
+            DecimalFormat df = new DecimalFormat();
+            df.setMaximumFractionDigits(2);
             hasil.setText(df.format(z));
 
         }
@@ -116,6 +116,8 @@ public class soal11 extends javax.swing.JFrame {
                 ulangActionPerformed(evt);
             }
         });
+
+        lihat.setEditable(false);
 
         ta.setColumns(20);
         ta.setRows(5);
@@ -202,15 +204,21 @@ public class soal11 extends javax.swing.JFrame {
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
             s4 o = new s4();
             o.jawab();
+            jawab.setEditable(false);
     }//GEN-LAST:event_btjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
         lihat.setText(hasil.getText());
+        jawab.setEditable(false);
+        
     }//GEN-LAST:event_btViewActionPerformed
 
     private void ulangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ulangActionPerformed
         s4 o = new s4();
         o.tampil();
+        jawab.setEditable(true);
+        jawab.setText("");
+        lihat.setText("");
     }//GEN-LAST:event_ulangActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

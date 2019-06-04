@@ -1,6 +1,7 @@
 
 package lat;
 
+import java.text.DecimalFormat;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -19,11 +20,13 @@ public class soal8 extends javax.swing.JFrame {
 
         void tampil() {
             super.setSoal("Tangki air berbentuk prisma persegi panjang memiliki panjang "+a+" cm, lebar "+b+" cm, dan tingginya "+c+" cm .\n"
-                    + "Tentukan volume tangki tersebut!\n\n Jawaban Dalam Bentuk Desimal");
+                    + "Tentukan volume tangki tersebut!");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
            float z = a*b*c;
-            hasil.setText(Float.toString(z));
+           DecimalFormat df = new DecimalFormat();
+            df.setMaximumFractionDigits(2);
+            hasil.setText(df.format(z));
 
         }
 
@@ -102,6 +105,8 @@ public class soal8 extends javax.swing.JFrame {
                 ulangActionPerformed(evt);
             }
         });
+
+        lihat.setEditable(false);
 
         ta.setColumns(20);
         ta.setRows(5);
@@ -187,15 +192,21 @@ public class soal8 extends javax.swing.JFrame {
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
        s1 o = new s1();
        o.jawab();
+       jawab.setEditable(false);
     }//GEN-LAST:event_btjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
         lihat.setText(hasil.getText());
+        jawab.setEditable(false);
     }//GEN-LAST:event_btViewActionPerformed
 
     private void ulangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ulangActionPerformed
         s1 o = new s1();
         o.tampil();
+        jawab.setEditable(true);
+        jawab.setText("");
+        lihat.setText("");
+        
     }//GEN-LAST:event_ulangActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

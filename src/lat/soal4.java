@@ -5,7 +5,8 @@
  */
 package lat;
 
-import static java.lang.Math.PI;
+
+import java.text.DecimalFormat;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -26,25 +27,27 @@ public class soal4 extends javax.swing.JFrame {
     private class s4 extends setget{
         
         Random ran = new Random();
-       
-        int a = ran.nextInt(100);
+     float PI= (float) 3.14;
+        int a = ran.nextInt(20);
         //int b = (int) 3.14;
         //int c = ran.nextInt(60);
 
         void tampil() {
             super.setSoal("Ada sebuah lingkaran yang memiliki jari jari yaitu "+a+" cm \n"
-                    + " hitunglah luas lingkaran tersebut !\n\n Jawaban Dalam Bentuk Desimal");
+                    + " hitunglah luas lingkaran tersebut !");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
-           float z = (float) (a*a*PI);
-            hasil.setText(Float.toString(z));
+           float z = (float) (PI*a*a);
+            DecimalFormat df = new DecimalFormat();
+            df.setMaximumFractionDigits(2);
+            hasil.setText(df.format(z));
 
         }
 
         void jawab() {
             if (Float.parseFloat(jawab.getText()) == Float.parseFloat(hasil.getText())) {
                 JOptionPane.showMessageDialog(null,"Jawaban Benar");
-                hasil.setText(hasil.getText());
+                lihat.setText(hasil.getText());
             } else {
                 JOptionPane.showMessageDialog(null,"Jawaban Salah");
             }
@@ -117,6 +120,8 @@ public class soal4 extends javax.swing.JFrame {
                 ulangActionPerformed(evt);
             }
         });
+
+        lihat.setEditable(false);
 
         ta.setColumns(20);
         ta.setRows(5);
@@ -203,15 +208,21 @@ public class soal4 extends javax.swing.JFrame {
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
 s4 o = new s4();
        o.jawab();
+       jawab.setEditable(false);
     }//GEN-LAST:event_btjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
 lihat.setText(hasil.getText());
+jawab.setEditable(false);
+
     }//GEN-LAST:event_btViewActionPerformed
 
     private void ulangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ulangActionPerformed
 s4 o = new s4();
         o.tampil();
+        jawab.setEditable(true);
+        jawab.setText("");
+        lihat.setText("");
     }//GEN-LAST:event_ulangActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

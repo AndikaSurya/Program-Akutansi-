@@ -30,12 +30,12 @@ public class soal10 extends javax.swing.JFrame {
         
 
         void tampil() {
-            super.setSoal("Tentukan limas limas persegi dengan panjang sisi alas "+a+" cm dan tingginya "+b+" cm\n\n"
-                                + "Keterangan: hasil berbentuk desimal dengan dua angka dibelakang koma");
+            super.setSoal("Tentukan limas limas persegi dengan panjang sisi alas "+a+" cm dan tingginya "+b+" cm!");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
             double z = a*a*b;
-            DecimalFormat df = new DecimalFormat("0.0");
+            DecimalFormat df = new DecimalFormat();
+            df.setMaximumFractionDigits(2);
             hasil.setText(df.format(z));
 
         }
@@ -117,6 +117,7 @@ public class soal10 extends javax.swing.JFrame {
             }
         });
 
+        lihat.setEditable(false);
         lihat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lihatActionPerformed(evt);
@@ -208,15 +209,21 @@ public class soal10 extends javax.swing.JFrame {
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
         s3 o = new s3();
         o.jawab();
+        jawab.setEditable(false);
     }//GEN-LAST:event_btjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
         lihat.setText(hasil.getText());
+        jawab.setEditable(false);
     }//GEN-LAST:event_btViewActionPerformed
 
     private void ulangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ulangActionPerformed
         s3 o = new s3();
         o.tampil();
+        jawab.setEditable(true);
+ jawab.setText("");
+ lihat.setText("");
+        
     }//GEN-LAST:event_ulangActionPerformed
 
     private void lihatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatActionPerformed

@@ -30,8 +30,7 @@ public class soal13 extends javax.swing.JFrame {
         int c = ran.nextInt(5);
 
         void tampil() {
-            super.setSoal("Tentukan volume kerucut terpancung yang memiliki jari-jari alas "+a+", jari-jari atas "+b+" cm dan tinggi "+c+"\n\n"
-                                + "Keterangan: hasil berbentuk desimal dengan dua angka dibelakang koma");
+            super.setSoal("Tentukan volume kerucut terpancung yang memiliki jari-jari alas "+a+", jari-jari atas "+b+" cm dan tinggi "+c+" cm");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
             double m = (a*a)+(a*b)+(b*b);
@@ -116,6 +115,8 @@ public class soal13 extends javax.swing.JFrame {
                 ulangActionPerformed(evt);
             }
         });
+
+        lihat.setEditable(false);
 
         ta.setColumns(20);
         ta.setRows(5);
@@ -208,15 +209,20 @@ public class soal13 extends javax.swing.JFrame {
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
         s6 o = new s6();
         o.jawab();
+        jawab.setEditable(false);
     }//GEN-LAST:event_btjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
        lihat.setText(hasil.getText());
+       jawab.setEditable(false);
     }//GEN-LAST:event_btViewActionPerformed
 
     private void ulangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ulangActionPerformed
         s6 o = new s6();
         o.tampil();
+        jawab.setEditable(true);
+        jawab.setText("");
+        lihat.setText("");
     }//GEN-LAST:event_ulangActionPerformed
 
     private void hasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hasilActionPerformed

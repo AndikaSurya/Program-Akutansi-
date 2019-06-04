@@ -19,7 +19,7 @@ public class soal2 extends javax.swing.JFrame {
 
         void tampil() {
             super.setSoal("Ada sebuah persegi panjang yang memiliki panjang yaitu " + a + " cm dan lebar yaitu " + b + " cm \n"
-                    + " hitunglah luas persegi panjang tersebut !\n\n Jawaban Dalam Bentuk Desimal");
+                    + " hitunglah luas persegi panjang tersebut !");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
             float z = a * b;
@@ -30,7 +30,7 @@ public class soal2 extends javax.swing.JFrame {
         void jawab() {
             if (Float.parseFloat(jawab.getText()) == Float.parseFloat(hasil.getText())) {
                 JOptionPane.showMessageDialog(null, "Jawaban Benar");
-                hasil.setText(hasil.getText());
+                lihat.setText(hasil.getText());
             } else {
                 JOptionPane.showMessageDialog(null, "Jawaban Salah");
             }
@@ -103,6 +103,8 @@ public class soal2 extends javax.swing.JFrame {
                 ulangActionPerformed(evt);
             }
         });
+
+        lihat.setEditable(false);
 
         ta.setColumns(20);
         ta.setRows(5);
@@ -188,15 +190,20 @@ public class soal2 extends javax.swing.JFrame {
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
         s2 o = new s2();
         o.jawab();
+        jawab.setEditable(false);
     }//GEN-LAST:event_btjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
         lihat.setText(hasil.getText());
+        jawab.setEditable(false);
     }//GEN-LAST:event_btViewActionPerformed
 
     private void ulangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ulangActionPerformed
         s2 o = new s2();
         o.tampil();
+        jawab.setEditable(true);
+        lihat.setText("");
+        jawab.setText("");
     }//GEN-LAST:event_ulangActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

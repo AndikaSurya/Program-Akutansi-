@@ -29,12 +29,12 @@ public class soal9 extends javax.swing.JFrame {
         
 
         void tampil() {
-            super.setSoal("Tentukan volume tabung dengan jari-jari "+a+" cm dan tinggi "+b+" cm!\n\n"
-                                + "Keterangan: hasil berbentuk desimal dengan dua angka dibelakang koma");
+            super.setSoal("Tentukan volume tabung dengan jari-jari "+a+" cm dan tinggi "+b+" cm!\n\n");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
             float z = p*a*a*b;
-            DecimalFormat df = new DecimalFormat("0.0");
+            DecimalFormat df = new DecimalFormat();
+            df.setMaximumFractionDigits(2);
             hasil.setText(df.format(z));
 
         }
@@ -114,6 +114,8 @@ public class soal9 extends javax.swing.JFrame {
                 ulangActionPerformed(evt);
             }
         });
+
+        lihat.setEditable(false);
 
         ta.setColumns(20);
         ta.setRows(5);
@@ -200,15 +202,21 @@ public class soal9 extends javax.swing.JFrame {
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
         s2 o = new s2();
         o.jawab();
+        jawab.setEditable(false);
+
     }//GEN-LAST:event_btjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
         lihat.setText(hasil.getText());
+        jawab.setEditable(false);
     }//GEN-LAST:event_btViewActionPerformed
 
     private void ulangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ulangActionPerformed
         s2 o = new s2();
         o.tampil();
+        jawab.setEditable(true);
+        jawab.setText("");
+        lihat.setText("");
     }//GEN-LAST:event_ulangActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

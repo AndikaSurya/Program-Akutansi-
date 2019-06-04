@@ -31,7 +31,7 @@ public class soal3 extends javax.swing.JFrame {
 
         void tampil() {
             super.setSoal("Terdapat sebuah bangun datar jajar genjang yang sisi miringnya memiliki panjang alasnya ialah "+a+" cm dan tingginya ialah "+b+" cm \n"
-                    + " Jadi berapa luas jajar genjang tersebut? \n\n Jawaban Dalam Bentuk Desimal");
+                    + " Jadi berapa luas jajar genjang tersebut? ");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
            float z = a*b;
@@ -42,7 +42,7 @@ public class soal3 extends javax.swing.JFrame {
         void jawab() {
             if (Float.parseFloat(jawab.getText()) == Float.parseFloat(hasil.getText())) {
                 JOptionPane.showMessageDialog(null,"Jawaban Benar");
-                hasil.setText(hasil.getText());
+                lihat.setText(hasil.getText());
             } else {
                 JOptionPane.showMessageDialog(null,"Jawaban Salah");
             }
@@ -115,6 +115,8 @@ public class soal3 extends javax.swing.JFrame {
                 ulangActionPerformed(evt);
             }
         });
+
+        lihat.setEditable(false);
 
         ta.setColumns(20);
         ta.setRows(5);
@@ -207,15 +209,21 @@ public class soal3 extends javax.swing.JFrame {
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
 s3 o = new s3();
        o.jawab();
+       jawab.setEditable(false);
     }//GEN-LAST:event_btjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
 lihat.setText(hasil.getText());
+jawab.setEditable(false);
+
     }//GEN-LAST:event_btViewActionPerformed
 
     private void ulangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ulangActionPerformed
-s3 o = new s3();
+        s3 o = new s3();
         o.tampil();
+        jawab.setEditable(true);
+        lihat.setText("");
+        jawab.setText("");
     }//GEN-LAST:event_ulangActionPerformed
 
     private void hasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hasilActionPerformed

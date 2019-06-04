@@ -20,8 +20,7 @@ public class soal14 extends javax.swing.JFrame {
         int c = ran.nextInt(10);
 
         void tampil() {
-            super.setSoal("Tentukan volume kubus yang memiliki ukuran "+a+" m x "+b+" m x "+c+" m !\n\n"
-                    + "Keterangan: hasil berbentuk desimal dengan dua angka dibelakang koma");
+            super.setSoal("Tentukan volume kubus yang memiliki ukuran "+a+" m x "+b+" m x "+c+" m !");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
             double z = a*b*c;
@@ -104,6 +103,13 @@ public class soal14 extends javax.swing.JFrame {
         ulang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ulangActionPerformed(evt);
+            }
+        });
+
+        lihat.setEditable(false);
+        lihat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lihatActionPerformed(evt);
             }
         });
 
@@ -198,15 +204,20 @@ public class soal14 extends javax.swing.JFrame {
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
         s7 o = new s7();
         o.jawab();
+        jawab.setEditable(false);
     }//GEN-LAST:event_btjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
         lihat.setText(hasil.getText());
+        jawab.setEditable(false);
     }//GEN-LAST:event_btViewActionPerformed
 
     private void ulangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ulangActionPerformed
         s7 o = new s7();
         o.tampil();
+        jawab.setEditable(true);
+        jawab.setText("");
+        lihat.setText("");
     }//GEN-LAST:event_ulangActionPerformed
 
     private void hasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hasilActionPerformed
@@ -218,6 +229,10 @@ public class soal14 extends javax.swing.JFrame {
         th.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void lihatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lihatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lihatActionPerformed
 
     /**
      * @param args the command line arguments

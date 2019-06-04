@@ -29,8 +29,7 @@ public class soal12 extends javax.swing.JFrame {
         
 
         void tampil() {
-            super.setSoal("Tentukan volume bola yang memiliki jari-jari "+b+" cm\n\n"
-                                + "Keterangan: hasil berbentuk desimal dengan dua angka dibelakang koma");
+            super.setSoal("Tentukan volume bola yang memiliki jari-jari "+b+" cm\n\n hasil desimal 2 angka dibelakang koma");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
             double z = 1.3*p*b*b*b;
@@ -114,6 +113,8 @@ public class soal12 extends javax.swing.JFrame {
                 ulangActionPerformed(evt);
             }
         });
+
+        lihat.setEditable(false);
 
         ta.setColumns(20);
         ta.setRows(5);

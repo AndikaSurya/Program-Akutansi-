@@ -6,6 +6,7 @@
 package lat;
 
 import static java.lang.Math.PI;
+import java.text.DecimalFormat;
 import java.util.Random;
 import javax.swing.JOptionPane;
 
@@ -32,18 +33,20 @@ public class soal5 extends javax.swing.JFrame {
 
         void tampil() {
             super.setSoal("Ada sebuah Segitiga yang memiliki tinggi yaitu "+a+" cm dan alas"+b+" cm\n"
-                    + " hitunglah luas segitiga tersebut !\n\n Jawaban Dalam Bentuk Desimal");
+                    + " hitunglah luas segitiga tersebut !\n\n Jawaban Dalam Bentuk Desimal ");
             ta.setText(super.getSoal());
             hasil.setVisible(false);
-           float z = a*b*1/2;
-            hasil.setText(Float.toString(z));
+           float z = (float) (a*b*0.5);
+            DecimalFormat df = new DecimalFormat();
+            df.setMaximumFractionDigits(2);
+            hasil.setText(df.format(z));
 
         }
 
         void jawab() {
             if (Float.parseFloat(jawab.getText()) == Float.parseFloat(hasil.getText())) {
                 JOptionPane.showMessageDialog(null,"Jawaban Benar");
-                hasil.setText(hasil.getText());
+                lihat.setText(hasil.getText());
             } else {
                 JOptionPane.showMessageDialog(null,"Jawaban Salah");
             }
@@ -116,6 +119,8 @@ public class soal5 extends javax.swing.JFrame {
                 ulangActionPerformed(evt);
             }
         });
+
+        lihat.setEditable(false);
 
         ta.setColumns(20);
         ta.setRows(5);
@@ -202,15 +207,20 @@ public class soal5 extends javax.swing.JFrame {
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
 s5 o = new s5();
        o.jawab();
+       jawab.setEditable(false);
     }//GEN-LAST:event_btjawabActionPerformed
 
     private void btViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btViewActionPerformed
 lihat.setText(hasil.getText());
+jawab.setEditable(false);
     }//GEN-LAST:event_btViewActionPerformed
 
     private void ulangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ulangActionPerformed
 s5 o = new s5();
        o.tampil();
+       jawab.setEditable(true);
+       jawab.setText("");
+       lihat.setText("");
     }//GEN-LAST:event_ulangActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
