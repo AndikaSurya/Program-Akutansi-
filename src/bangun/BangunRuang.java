@@ -11,6 +11,7 @@ public class BangunRuang extends javax.swing.JFrame {
     Tabung tb;
     public BangunRuang() {
         initComponents();
+         setLocationRelativeTo(this);
         ku = new Kubus();
         blk = new Balok();
         bl = new Bola();

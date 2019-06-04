@@ -1,4 +1,7 @@
 package bangun;
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -19,6 +22,62 @@ public class Balok extends javax.swing.JPanel {
         //jahvhxsycxuwcywcsxyusayuxv
         //cvbnm,cvbnm
     }
+      private class bangun extends Inisial
+    {
+
+        @Override
+        void volume() {
+            setSisi(Double.parseDouble(panjang.getText()));
+            setSisi1(Double.parseDouble(lebar.getText()));
+            setSisi2(Double.parseDouble(tinggi.getText()));
+            double all = getSisi()*getSisi1()*getSisi2();
+            volume.setText(Double.toString(all));
+        }
+
+        @Override
+        void luas() {
+            setSisi(Double.parseDouble(panjang.getText()));
+            setSisi1(Double.parseDouble(lebar.getText()));
+            setSisi2(Double.parseDouble(tinggi.getText()));
+            double all = 2*((getSisi1()*getSisi2()) + (getSisi()*getSisi1()) + (getSisi()*getSisi2()));
+            luas.setText(Double.toString(all));
+        }
+        void tampil()
+        {
+            super.setJelas("Merupakan bangun yang dibatasi oleh 6 sisi yang mempunyai ukuran panjang dan lebar\n" +
+"\n" +
+"Ciri-ciri BALOK,antara lain:\n" +
+"Ø  Balok merupakan bangun ruang yang dibatasi 6 persegi panjang dimana 3 persegi panjang kongruen,\n" +
+"Ø  Balok mempunyai 6 sisi berbentuk persegi panjang,\n" +
+"Ø  Balok mempunyai 3 pasang bidang sisi berhadapan yang kongruen,\n" +
+"Ø  Balok mempunyai 12 rusuk,\n" +
+"Ø  4 buah rusuk yang sejajar sama panjang,\n" +
+"Ø  Balok mempunyai 8 titik sudut,\n" +
+"Ø  Jaring-jaring balok berupa 6 buah persegi panjang.\n" +
+"\n" +
+"Rumus Luas Permukaan Balok\n" +
+"L  =  2 x [ (p x l) + (p x t) + (l x t) ]\n" +
+"L   :  luas permukaan\n" +
+"p   :  panjang balok\n" +
+"l    :  lebar balok\n" +
+"t    :  tinggi balok\n" +
+"\n" +
+"\n" +
+"\n" +
+"\n" +
+"\n" +
+"Rumus Volume Balok\n" +
+"V  =  p x l x t\n" +
+"      V     :  volume balok\n" +
+"      p     :  panjang balok\n" +
+"      l      :  lebar balok\n" +
+"      t      :  tinggi balok");
+            ta.setText(super.getJelas());
+        }
+        
+    }
+
+    
 //lalala
     /**
      * This method is called from within the constructor to initialize the form.
@@ -61,10 +120,20 @@ public class Balok extends javax.swing.JPanel {
                 lebarActionPerformed(evt);
             }
         });
+        lebar.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                lebarKeyTyped(evt);
+            }
+        });
 
         panjang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 panjangActionPerformed(evt);
+            }
+        });
+        panjang.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                panjangKeyTyped(evt);
             }
         });
 
@@ -87,6 +156,11 @@ public class Balok extends javax.swing.JPanel {
         tinggi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tinggiActionPerformed(evt);
+            }
+        });
+        tinggi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tinggiKeyTyped(evt);
             }
         });
 
@@ -175,7 +249,23 @@ public class Balok extends javax.swing.JPanel {
     }//GEN-LAST:event_panjangActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+         if(panjang.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");  
+        }
+ else if(tinggi.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");  
+        }
+       else if(lebar.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");  
+        }
+        bangun a = new bangun();
+    a.tampil();
+    Inisial i = new bangun();
+    i.luas();
+    i.volume();
+panjang.setText("");
+lebar.setText("");
+tinggi.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void luasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luasActionPerformed
@@ -189,6 +279,27 @@ public class Balok extends javax.swing.JPanel {
     private void volumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volumeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_volumeActionPerformed
+
+    private void panjangKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_panjangKeyTyped
+      if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      }
+    }//GEN-LAST:event_panjangKeyTyped
+
+    private void lebarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_lebarKeyTyped
+         if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      }
+    }//GEN-LAST:event_lebarKeyTyped
+
+    private void tinggiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tinggiKeyTyped
+        if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      }
+    }//GEN-LAST:event_tinggiKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
