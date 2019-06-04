@@ -25,9 +25,9 @@ public class soal13 extends javax.swing.JFrame {
         Random ran = new Random();
         
         double p = 3.14;
-        int a = ran.nextInt(10);
-        int b = ran.nextInt(5);
-        int c = ran.nextInt(5);
+        int a = ran.nextInt(20);
+        int b = ran.nextInt(20);
+        int c = ran.nextInt(20);
 
         void tampil() {
             super.setSoal("Tentukan volume kerucut terpancung yang memiliki jari-jari alas "+a+", jari-jari atas "+b+" cm dan tinggi "+c+" cm");

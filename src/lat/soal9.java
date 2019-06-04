@@ -24,8 +24,8 @@ public class soal9 extends javax.swing.JFrame {
         Random ran = new Random();
         
         float p =  (float) 3.14;
-        int a = ran.nextInt(15);
-        int b = ran.nextInt(20);
+        int a = ran.nextInt(25);
+        int b = ran.nextInt(25);
         
 
         void tampil() {

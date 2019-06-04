@@ -30,7 +30,7 @@ public class soal1 extends javax.swing.JFrame {
         //int c = ran.nextInt(60);
 
         void tampil() {
-            super.setSoal("Sebuah Persegi memiliki sisi sepanjang"+a+"cm\n"
+            super.setSoal("Sebuah Persegi memiliki sisi sepanjang " +a+ " cm\n"
                     + " Tentukan Luas Persegi tersebut ");
             ta.setText(super.getSoal());
             hasil.setVisible(false);

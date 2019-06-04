@@ -28,7 +28,7 @@ public class soal4 extends javax.swing.JFrame {
         
         Random ran = new Random();
      float PI= (float) 3.14;
-        int a = ran.nextInt(20);
+        int a = ran.nextInt(25);
         //int b = (int) 3.14;
         //int c = ran.nextInt(60);
 

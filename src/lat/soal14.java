@@ -15,9 +15,9 @@ public class soal14 extends javax.swing.JFrame {
     private class s7 extends setget{
         Random ran = new Random();
       
-        int a = ran.nextInt(10);
-        int b = ran.nextInt(10);
-        int c = ran.nextInt(10);
+        int a = ran.nextInt(20);
+        int b = ran.nextInt(20);
+        int c = ran.nextInt(20);
 
         void tampil() {
             super.setSoal("Tentukan volume kubus yang memiliki ukuran "+a+" m x "+b+" m x "+c+" m !");
