@@ -211,7 +211,10 @@ public class soal7 extends javax.swing.JFrame {
     }//GEN-LAST:event_jawabActionPerformed
 
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
-s7 o = new s7();
+if(jawab.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf  form belum terisi");  
+        }
+        s7 o = new s7();
        o.jawab();
        jawab.setEditable(false);
     }//GEN-LAST:event_btjawabActionPerformed

@@ -191,7 +191,10 @@ public class soal8 extends javax.swing.JFrame {
     }//GEN-LAST:event_jawabActionPerformed
 
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
-       s1 o = new s1();
+if(jawab.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf  form belum terisi");  
+        }
+        s1 o = new s1();
        o.jawab();
        jawab.setEditable(false);
     }//GEN-LAST:event_btjawabActionPerformed

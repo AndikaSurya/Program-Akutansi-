@@ -200,6 +200,9 @@ public class soal12 extends javax.swing.JFrame {
     }//GEN-LAST:event_jawabActionPerformed
 
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
+if(jawab.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf  form belum terisi");  
+        }
         s5 o = new s5 ();
         o.jawab();
     }//GEN-LAST:event_btjawabActionPerformed

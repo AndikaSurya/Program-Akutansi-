@@ -208,6 +208,9 @@ public class soal10 extends javax.swing.JFrame {
     }//GEN-LAST:event_jawabActionPerformed
 
     private void btjawabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btjawabActionPerformed
+if(jawab.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf  form belum terisi");  
+        }
         s3 o = new s3();
         o.jawab();
         jawab.setEditable(false);
