@@ -1,4 +1,7 @@
 package bangun;
+
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,6 +19,51 @@ public class Kubus extends javax.swing.JPanel {
      */
     public Kubus() {
         initComponents();
+    }
+     
+    private class bangun  extends Inisial
+    {
+
+        @Override
+        void volume() {
+           setSisi1(Double.parseDouble(rusuk.getText()));
+           double all = Math.pow(getSisi1(), 3);
+           volume.setText(Double.toString(all));
+        }
+
+        @Override
+        void luas() {
+            setSisi1(Double.parseDouble(rusuk.getText()));
+            double all = Math.pow(getSisi1(), 2)*6;
+            luas.setText(Double.toString(all));
+            
+        }
+        
+        void tampil()
+        {
+            super.setJelas("Merupakan bangun yang dibatasi oleh 6 sisi yang sama dan sebangun.\n" +
+"\n" +
+"Ciri-ciri KUBUS, antara lain :\n" +
+"Ø  Kubus merupakan bangun ruang dengan 6 sisi sama besar (kongruen),\n" +
+"Ø  Kubus mempunyai 6 sisi berbentuk persegi,\n" +
+"Ø  Kubus mempunyai 12 rusuk yang sama panjang,\n" +
+"Ø  Kubus mempunyai 8 titik sudut,\n" +
+"Ø  Jaring-karing kubus berupa 6 buah persegi yang kongruen.\n" +
+"\n" +
+"Rumus Luas Permukaan Kubus\n" +
+"L  =  6 x r2\n" +
+"        L  :  luas permukaan\n" +
+"        r  :  panjang rusuk\n" +
+"\n" +
+"Rumus Volume Kubus\n" +
+"V  =  r3\n" +
+"        V  :  Volume\n" +
+"        r   :  panjang rusuk");
+            ta.setText(super.getJelas());
+        }
+
+    
+        
     }
 
     /**
@@ -56,8 +104,18 @@ public class Kubus extends javax.swing.JPanel {
                 rusukActionPerformed(evt);
             }
         });
+        rusuk.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                rusukKeyTyped(evt);
+            }
+        });
 
         jButton1.setText("Hasil");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         luas.setEditable(false);
         luas.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +201,28 @@ public class Kubus extends javax.swing.JPanel {
     private void volumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volumeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_volumeActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+          if(rusuk.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");  
+        }
+
+        bangun a = new bangun();
+    a.tampil();
+    Inisial i = new bangun();
+    i.luas();
+    i.volume();
+    
+    rusuk.setText("");
+ 
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void rusukKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_rusukKeyTyped
+        if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      }
+    }//GEN-LAST:event_rusukKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
