@@ -19,8 +19,8 @@ public class Balok extends javax.swing.JPanel {
      */
     public Balok() {
         initComponents();
-        //jahvhxsycxuwcywcsxyusayuxv
-        //cvbnm,cvbnm
+       
+      
     }
       private class bangun extends Inisial
     {

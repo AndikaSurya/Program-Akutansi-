@@ -19,6 +19,7 @@ public class soal3 extends javax.swing.JFrame {
      */
     public soal3() {
         initComponents();//coba 3
+        setLocationRelativeTo(this);
     }
     
     private class s3 extends setget{
@@ -30,7 +31,7 @@ public class soal3 extends javax.swing.JFrame {
         //int c = ran.nextInt(60);
 
         void tampil() {
-            super.setSoal("Terdapat sebuah bangun datar jajar genjang yang sisi miringnya memiliki panjang alasnya ialah "+a+" cm dan tingginya ialah "+b+" cm \n"
+            super.setSoal("Terdapat sebuah bangun datar jajar genjang yang sisi miringnya memiliki panjang alasnya ialah " +a+ " cm dan tingginya ialah " +b+ " cm \n"
                     + " Jadi berapa luas jajar genjang tersebut? ");
             ta.setText(super.getSoal());
             hasil.setVisible(false);

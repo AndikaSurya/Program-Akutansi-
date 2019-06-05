@@ -19,13 +19,14 @@ public class soal9 extends javax.swing.JFrame {
      */
     public soal9() {
         initComponents();
+        setLocationRelativeTo(this);
     }
     private class s2 extends setget{
         Random ran = new Random();
         
         float p =  (float) 3.14;
-        int a = ran.nextInt(25);
-        int b = ran.nextInt(25);
+        int a = ran.nextInt(30);
+        int b = ran.nextInt(30);
         
 
         void tampil() {

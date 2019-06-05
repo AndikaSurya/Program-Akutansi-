@@ -20,6 +20,7 @@ public class soal13 extends javax.swing.JFrame {
      */
     public soal13() {
         initComponents();
+        setLocationRelativeTo(this);
     }
     private class s6 extends setget{
         Random ran = new Random();

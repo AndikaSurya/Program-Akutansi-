@@ -10,6 +10,7 @@ public class soal14 extends javax.swing.JFrame {
 
     public soal14() {
         initComponents();
+        setLocationRelativeTo(this);
     }
     
     private class s7 extends setget{
@@ -69,7 +70,7 @@ public class soal14 extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Next");
+        jButton2.setText("Finish");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

@@ -9,6 +9,7 @@ public class soal8 extends javax.swing.JFrame {
 
     public soal8() {
         initComponents();
+        setLocationRelativeTo(this);
     }
     private class s1 extends setget {
         

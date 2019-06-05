@@ -22,6 +22,7 @@ public class soal4 extends javax.swing.JFrame {
      */
     public soal4() {
         initComponents();//coba 4
+        setLocationRelativeTo(this);
     }
     
     private class s4 extends setget{

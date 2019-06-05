@@ -20,14 +20,15 @@ public class soal11 extends javax.swing.JFrame {
      */
     public soal11() {
         initComponents();
+        setLocationRelativeTo(this);
     }
     
     private class s4 extends setget{
         Random ran = new Random();
         
         double p = 3.14;
-        int a = ran.nextInt(10);
-        int b = ran.nextInt(20);
+        int a = ran.nextInt(30);
+        int b = ran.nextInt(30);
         
 
         void tampil() {

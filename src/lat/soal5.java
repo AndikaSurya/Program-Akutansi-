@@ -21,6 +21,7 @@ public class soal5 extends javax.swing.JFrame {
      */
     public soal5() {
         initComponents();//coba 5
+        setLocationRelativeTo(this);
     }
     
      private class s5 extends setget{
@@ -32,7 +33,7 @@ public class soal5 extends javax.swing.JFrame {
         //int c = ran.nextInt(60);
 
         void tampil() {
-            super.setSoal("Ada sebuah Segitiga yang memiliki tinggi yaitu "+a+" cm dan alas"+b+" cm\n"
+            super.setSoal("Ada sebuah Segitiga yang memiliki tinggi yaitu " +a+ " cm dan alas " +b+ " cm\n"
                     + " hitunglah luas segitiga tersebut !\n\n Jawaban Dalam Bentuk Desimal ");
             ta.setText(super.getSoal());
             hasil.setVisible(false);

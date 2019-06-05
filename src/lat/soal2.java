@@ -7,6 +7,7 @@ public class soal2 extends javax.swing.JFrame {
 
     public soal2() {
         initComponents();//coba 2
+        setLocationRelativeTo(this);
     }
 
     private class s2 extends setget {

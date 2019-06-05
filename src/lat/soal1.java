@@ -19,6 +19,7 @@ public class soal1 extends javax.swing.JFrame {
      */
     public soal1() {
         initComponents();//coba 3
+      setLocationRelativeTo(this);
     }
     
     private class s3 extends setget{
@@ -120,7 +121,7 @@ public class soal1 extends javax.swing.JFrame {
 
         ta.setColumns(20);
         ta.setRows(5);
-        ta.setText("Soal No.3\n\nKlik Tombol Ulang Untuk Menampilkan Soal!");
+        ta.setText("Soal No.1\n\nKlik Tombol Ulang Untuk Menampilkan Soal!");
         jScrollPane1.setViewportView(ta);
 
         hasil.addActionListener(new java.awt.event.ActionListener() {
@@ -197,7 +198,7 @@ public class soal1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        soal4 q4 = new soal4();
+        soal2 q4 = new soal2();
         q4.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton2ActionPerformed

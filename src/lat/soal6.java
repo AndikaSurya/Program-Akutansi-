@@ -20,6 +20,7 @@ public class soal6 extends javax.swing.JFrame {
      */
     public soal6() {
         initComponents();//coba 6
+        setLocationRelativeTo(this);
     }
     
     private class s6 extends setget{

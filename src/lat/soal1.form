@@ -172,7 +172,7 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="text" type="java.lang.String" value="Soal No.3&#xa;&#xa;Klik Tombol Ulang Untuk Menampilkan Soal!"/>
+            <Property name="text" type="java.lang.String" value="Soal No.1&#xa;&#xa;Klik Tombol Ulang Untuk Menampilkan Soal!"/>
           </Properties>
         </Component>
       </SubComponents>
