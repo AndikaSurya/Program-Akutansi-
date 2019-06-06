@@ -3,8 +3,6 @@ package bangun;
 import static java.lang.Math.PI;
 import javax.swing.JOptionPane;
 
-
-
 public class Bola extends javax.swing.JPanel {
 
     public Bola() {
