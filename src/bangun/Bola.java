@@ -1,21 +1,63 @@
 package bangun;
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author ASUS
- */
+import static java.lang.Math.PI;
+import javax.swing.JOptionPane;
+
+
+
 public class Bola extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Bola
-     */
     public Bola() {
         initComponents();
+    }
+    
+    private class bangun extends Inisial{
+   
+        @Override
+        void volume() {
+            setSisi(Double.parseDouble(jari.getText()));
+            double all = (1.3) * PI * (getSisi() * getSisi()* getSisi());
+            volume.setText(Double.toString(all));
+        }
+
+        @Override
+        void luas() {
+            setSisi(Double.parseDouble(jari.getText()));
+            double all = 4 * PI * (getSisi() * getSisi());
+            luas.setText(Double.toString(all));
+        }
+        
+        void tampil(){
+            super.setJelas("Merupakan bangun yang dibatasi oleh 6 sisi yang mempunyai ukuran panjang dan lebar\n"
+                    + "\n"
+                    + "Ciri-ciri BALOK,antara lain:\n"
+                    + "Ø  Balok merupakan bangun ruang yang dibatasi 6 persegi panjang dimana 3 persegi panjang kongruen,\n"
+                    + "Ø  Balok mempunyai 6 sisi berbentuk persegi panjang,\n"
+                    + "Ø  Balok mempunyai 3 pasang bidang sisi berhadapan yang kongruen,\n"
+                    + "Ø  Balok mempunyai 12 rusuk,\n"
+                    + "Ø  4 buah rusuk yang sejajar sama panjang,\n"
+                    + "Ø  Balok mempunyai 8 titik sudut,\n"
+                    + "Ø  Jaring-jaring balok berupa 6 buah persegi panjang.\n"
+                    + "\n"
+                    + "Rumus Luas Permukaan Balok\n"
+                    + "L  =  2 x [ (p x l) + (p x t) + (l x t) ]\n"
+                    + "L   :  luas permukaan\n"
+                    + "p   :  panjang balok\n"
+                    + "l    :  lebar balok\n"
+                    + "t    :  tinggi balok\n"
+                    + "\n"
+                    + "\n"
+                    + "\n"
+                    + "\n"
+                    + "\n"
+                    + "Rumus Volume Balok\n"
+                    + "V  =  p x l x t\n"
+                    + "      V     :  volume balok\n"
+                    + "      p     :  panjang balok\n"
+                    + "      l      :  lebar balok\n"
+                    + "      t      :  tinggi balok");
+            ta.setText(super.getJelas());
+        }
     }
 
     /**
@@ -63,6 +105,11 @@ public class Bola extends javax.swing.JPanel {
         });
 
         jButton1.setText("Hasil");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel9.setText("Volume");
 
@@ -171,6 +218,19 @@ public class Bola extends javax.swing.JPanel {
     private void luasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luasActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_luasActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");
+   
+        Bola.bangun a = new Bola.bangun();
+        a.tampil();
+        Inisial i = new Bola.bangun();
+        i.luas();
+        i.volume();
+        jari.setText("");
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
