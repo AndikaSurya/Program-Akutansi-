@@ -8,13 +8,13 @@ public class Bola extends javax.swing.JPanel {
     public Bola() {
         initComponents();
     }
-    
-    private class bangun extends Inisial{
-   
+
+    private class bangun extends Inisial {
+
         @Override
         void volume() {
             setSisi(Double.parseDouble(jari.getText()));
-            double all = (1.3) * PI * (getSisi() * getSisi()* getSisi());
+            double all = (1.3) * PI * (getSisi() * getSisi() * getSisi());
             volume.setText(Double.toString(all));
         }
 
@@ -24,36 +24,27 @@ public class Bola extends javax.swing.JPanel {
             double all = 4 * PI * (getSisi() * getSisi());
             luas.setText(Double.toString(all));
         }
-        
-        void tampil(){
-            super.setJelas("Merupakan bangun yang dibatasi oleh 6 sisi yang mempunyai ukuran panjang dan lebar\n"
+
+        void tampil() {
+            super.setJelas("Merupakan bangun yang dibatasi oleh sisi lengkung\n"
                     + "\n"
-                    + "Ciri-ciri BALOK,antara lain:\n"
-                    + "Ø  Balok merupakan bangun ruang yang dibatasi 6 persegi panjang dimana 3 persegi panjang kongruen,\n"
-                    + "Ø  Balok mempunyai 6 sisi berbentuk persegi panjang,\n"
-                    + "Ø  Balok mempunyai 3 pasang bidang sisi berhadapan yang kongruen,\n"
-                    + "Ø  Balok mempunyai 12 rusuk,\n"
-                    + "Ø  4 buah rusuk yang sejajar sama panjang,\n"
-                    + "Ø  Balok mempunyai 8 titik sudut,\n"
-                    + "Ø  Jaring-jaring balok berupa 6 buah persegi panjang.\n"
+                    + "Ciri-ciri BOLA, antara lain:\n"
+                    + "Ø  Bola merupakan bangun ruang berbentuk setengah lingkaran diputar mengelilingi garis tengahnya,\n"
+                    + "Ø  Bola mempunyai 1 sisi dan 1 titik pusat,\n"
+                    + "Ø  Sisi bola disebut dinding bola,\n"
+                    + "Ø  Bola tidak mempunyai titik sudut dan rusuk,\n"
+                    + "Ø  Jarak dinding ke titik pusat bola disebut jari-jari,\n"
+                    + "Ø  Jarak dinding ke dinding dan melewati titik pusat disebut diameter.\n"
                     + "\n"
-                    + "Rumus Luas Permukaan Balok\n"
-                    + "L  =  2 x [ (p x l) + (p x t) + (l x t) ]\n"
-                    + "L   :  luas permukaan\n"
-                    + "p   :  panjang balok\n"
-                    + "l    :  lebar balok\n"
-                    + "t    :  tinggi balok\n"
+                    + "Rumus Luas Permukaan Bola\n"
+                    + "L  =  4  π  r2\n"
+                    + "L    :  luas permukaan\n"
+                    + "r    :  jari-jari bola\n"
                     + "\n"
-                    + "\n"
-                    + "\n"
-                    + "\n"
-                    + "\n"
-                    + "Rumus Volume Balok\n"
-                    + "V  =  p x l x t\n"
-                    + "      V     :  volume balok\n"
-                    + "      p     :  panjang balok\n"
-                    + "      l      :  lebar balok\n"
-                    + "      t      :  tinggi balok");
+                    + "Rumus Volume Bola\n"
+                    + "V  =  4/3  π  r3\n"
+                    + "V     :  volume\n"
+                    + "r      : jari-jari bola");
             ta.setText(super.getJelas());
         }
     }
@@ -220,14 +211,14 @@ public class Bola extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");
-   
+
         Bola.bangun a = new Bola.bangun();
         a.tampil();
         Inisial i = new Bola.bangun();
         i.luas();
         i.volume();
         jari.setText("");
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
