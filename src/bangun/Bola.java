@@ -92,6 +92,11 @@ public class Bola extends javax.swing.JPanel {
                 jariActionPerformed(evt);
             }
         });
+        jari.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jariKeyTyped(evt);
+            }
+        });
 
         jButton1.setText("Hasil");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -220,6 +225,13 @@ public class Bola extends javax.swing.JPanel {
         jari.setText("");
 
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jariKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jariKeyTyped
+        if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      } 
+    }//GEN-LAST:event_jariKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
