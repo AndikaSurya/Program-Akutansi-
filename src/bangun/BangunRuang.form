@@ -24,25 +24,29 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" pref="160" max="-2" attributes="0"/>
-              <EmptySpace min="289" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="butKubus" min="-2" pref="223" max="-2" attributes="0"/>
-                  <Component id="butBalok" min="-2" pref="223" max="-2" attributes="0"/>
-                  <Component id="butLimas" min="-2" pref="223" max="-2" attributes="0"/>
-                  <Component id="butPrisma" min="-2" pref="223" max="-2" attributes="0"/>
-                  <Component id="butTabung" min="-2" pref="223" max="-2" attributes="0"/>
-                  <Component id="butKerucut" min="-2" pref="223" max="-2" attributes="0"/>
-                  <Component id="butBola" min="-2" pref="223" max="-2" attributes="0"/>
-                  <Component id="jButton2" min="-2" pref="223" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="273" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="160" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="296" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="butKubus" min="-2" pref="223" max="-2" attributes="0"/>
+                          <Component id="butBalok" min="-2" pref="223" max="-2" attributes="0"/>
+                          <Component id="butLimas" min="-2" pref="223" max="-2" attributes="0"/>
+                          <Component id="butPrisma" min="-2" pref="223" max="-2" attributes="0"/>
+                          <Component id="butTabung" min="-2" pref="223" max="-2" attributes="0"/>
+                          <Component id="butKerucut" min="-2" pref="223" max="-2" attributes="0"/>
+                          <Component id="butBola" min="-2" pref="223" max="-2" attributes="0"/>
+                          <Component id="jButton2" min="-2" pref="223" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jPanel1" max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace max="32767" attributes="0"/>
-              <Component id="jPanel1" min="-2" pref="471" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -68,14 +72,13 @@
                       <Component id="butBola" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                       <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="145" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jPanel1" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jPanel1" min="-2" pref="482" max="-2" attributes="0"/>
                   </Group>
               </Group>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
