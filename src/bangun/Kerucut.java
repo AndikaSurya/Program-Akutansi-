@@ -1,4 +1,8 @@
 package bangun;
+
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,6 +21,53 @@ public class Kerucut extends javax.swing.JPanel {
     public Kerucut() {
         initComponents();
     }
+      private class bangun extends Inisial
+    {
+        DecimalFormat df = new DecimalFormat("0.00"); 
+
+        @Override
+        void volume() {
+           setJari(Double.parseDouble(jari.getText()));
+           setTinggi(Double.parseDouble(tinggi.getText()));
+           double all = 0.3 * Math.pow(getJari(), 2)*3.14*getTinggi();
+           volume.setText(df.format(all));
+            
+        }
+
+        @Override
+        void luas() {
+            setJari(Double.parseDouble(jari.getText()));
+           setTinggi(Double.parseDouble(tinggi.getText()));
+           double all = 3.14*Math.pow(getJari(), 2)+ 3.14*(2*getJari())*getTinggi();
+           luas.setText(df.format(all));
+        }
+        void tampil()
+        {
+            super.setJelas("Merupakan bangun yang dibatasi oleh alas yang berbentuk lingkaran dan selimut yang berbentuk lengkung\n" +
+"\n" +
+"Ciri-ciri KERUCUT,antara lain:\n" +
+"Ø  Kerucut merupakan bangun ruang berbentuk limas yang alasnya berupa lingkaran,\n" +
+"Ø  Kerucut mempunyai 2 sisi,\n" +
+"Ø  Kerucut tidak  mempunyai rusuk,\n" +
+"Ø  Kerucut mempunyai 1 titik sudut,\n" +
+"Ø  Jaring-jaring kerucut terdiri dari lingkaran dan segi tiga.\n" +
+"\n" +
+"Rumus Luas Kerucut\n" +
+"L  =   π r2 + π dxt\n" +
+"L      :  luas permukaan\n" +
+"r      :  jari-jari lingkaran alas\n" +
+"d     :  diameter lingkaran alas\n" +
+"t      :  tinggi kerucut\n" +
+"\n" +
+"Rumus Volume Kerucut\n" +
+"V = 1/3  ( π r2  x  t )\n" +
+"V   :  volume\n" +
+"r    :  jari-jari lingkaran alas\n" +
+"t    :  tinggi kerucut");
+            ta.setText(super.getJelas());
+        }
+        
+    } 
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,10 +109,20 @@ public class Kerucut extends javax.swing.JPanel {
                 tinggiActionPerformed(evt);
             }
         });
+        tinggi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tinggiKeyTyped(evt);
+            }
+        });
 
         jari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jariActionPerformed(evt);
+            }
+        });
+        jari.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jariKeyTyped(evt);
             }
         });
 
@@ -76,6 +137,11 @@ public class Kerucut extends javax.swing.JPanel {
         });
 
         jButton1.setText("Hasil");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel8.setText("Volume");
 
@@ -166,8 +232,8 @@ public class Kerucut extends javax.swing.JPanel {
                     .addComponent(volume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -191,6 +257,39 @@ public class Kerucut extends javax.swing.JPanel {
     private void volumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volumeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_volumeActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       if(jari.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");  
+        }
+ else if(tinggi.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");  
+        }
+   
+        
+        bangun a = new bangun();
+    a.tampil();
+    Inisial i = new bangun();
+    i.luas();
+    i.volume();
+    
+    jari.setText("");
+    tinggi.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jariKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jariKeyTyped
+  if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      }
+    }//GEN-LAST:event_jariKeyTyped
+
+    private void tinggiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tinggiKeyTyped
+       if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      }
+    }//GEN-LAST:event_tinggiKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

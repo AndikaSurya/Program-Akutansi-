@@ -1,4 +1,8 @@
 package bangun;
+
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,6 +20,55 @@ public class Tabung extends javax.swing.JPanel {
      */
     public Tabung() {
         initComponents();
+    }
+     private class bangun extends Inisial
+    {
+        DecimalFormat df = new DecimalFormat("0.00");
+
+        @Override
+        void volume() {
+           setJari(Double.parseDouble(jari.getText()));
+           setTinggi(Double.parseDouble(tinggi.getText()));
+           double all = 3.14* Math.pow(getJari(),2)*getTinggi();
+           volume.setText(df.format(all));
+        }
+
+        @Override
+        void luas() {
+            setJari(Double.parseDouble(jari.getText()));
+           setTinggi(Double.parseDouble(tinggi.getText()));
+           double all = 2*3.14*getJari()*(getJari()+getTinggi());
+           luas.setText(df.format(all));
+        }
+        
+        
+        void tampil()
+        {
+            super.setJelas("Merupakan bangun yang dibatasi oleh sisi lengkung dan buah lingkaran\n" +
+"\n" +
+"Ciri-ciri TABUNG, antara lain:\n" +
+"Ø  Tabung merupakan bangun ruang berupa prisma tegak dengan bidang alas dan atas berupa lingkaran,\n" +
+"Ø  Tinggi tabung adalah jarak titik pusat bidang lingkaran alas dengan titik pusat lingkaran atas,\n" +
+"Ø  Bidang tegak tabung berupa lengkungan yang disebut selimut tabung,\n" +
+"Ø  Jaring-jaring tabung tabung berupa 2 buah lingkaran dan 1 persegi panjang.\n" +
+"\n" +
+"Rumus Luas Permukaan Tabung\n" +
+"L  =  2 x ( π r2 ) + π d x t\n" +
+"L    :  luas permukaan\n" +
+"r    :  jari-jari lingkaran alas\n" +
+"d   :  diameter lingkaran alas\n" +
+"t    :  tinggi tabung\n" +
+"\n" +
+"Rumus Volume Tabung\n" +
+"V =  1/3  (luas alas x t)\n" +
+"V            :   Volume\n" +
+"luas alas  :  π r2\n" +
+"r               :jari-jari alas\n" +
+"t               :  tinggi tabung");
+            ta.setText(super.getJelas());
+        }
+                
+        
     }
 
     /**
@@ -57,10 +110,20 @@ public class Tabung extends javax.swing.JPanel {
                 tinggiActionPerformed(evt);
             }
         });
+        tinggi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tinggiKeyTyped(evt);
+            }
+        });
 
         jari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jariActionPerformed(evt);
+            }
+        });
+        jari.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jariKeyTyped(evt);
             }
         });
 
@@ -73,6 +136,11 @@ public class Tabung extends javax.swing.JPanel {
         });
 
         jButton1.setText("Hasil");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Luas Permukaan");
 
@@ -189,6 +257,37 @@ public class Tabung extends javax.swing.JPanel {
     private void volumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volumeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_volumeActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+     if(jari.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");  
+        }
+ else if(tinggi.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");  
+        }
+        bangun a = new bangun();
+    a.tampil();
+    Inisial i = new bangun();
+    i.luas();
+    i.volume();
+    
+   jari.setText("");
+   tinggi.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jariKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jariKeyTyped
+    if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      }
+    }//GEN-LAST:event_jariKeyTyped
+
+    private void tinggiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tinggiKeyTyped
+            if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      }
+    }//GEN-LAST:event_tinggiKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

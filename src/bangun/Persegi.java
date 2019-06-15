@@ -1,4 +1,8 @@
 package bangun;
+
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,6 +21,45 @@ public class Persegi extends javax.swing.JPanel {
     public Persegi() {
         initComponents();
     }
+     DecimalFormat df = new DecimalFormat("0.00");
+    
+    public class datar extends abstrak{
+    @Override
+    public void luas()
+    {
+        double jumlah;
+        setSisi(Double.parseDouble(sisi.getText()));
+           jumlah =Math.pow(getSisi(), 2);
+        luas.setText(df.format(jumlah));
+        
+    }
+    public void keliling()
+    {
+         double jumlah;
+        setSisi(Double.parseDouble(sisi.getText()));
+        jumlah = getSisi()*4;
+       keliling.setText(df.format(jumlah));
+    }
+    void tampil()
+    {
+        super.setJelas("Persegi adalah bangun datar dua dimensi yang dibentuk oleh empat buah rusuk yang sama panjang dan memiliki empat buah sudut siku-siku."+"\n Sifat Persegi:\n" +
+"\n" +
+"Mempunyai 4 titik sudut.\n" +
+"Mempunyai 4 sudut siku-siku 90⁰.\n" +
+"Mempunyai 2 diagonal yang sama panjang.\n" +
+"Mempunyai 4 simetri lipat.\n" +
+"Mempunyai 4 simetri puta"+ "\n Bangun persegi memiliki 4 buah simetri putar dan 4 buah simetri lipat.\n" +
+"\n\n" +
+"Rumus :\n" +
+"\n" +
+"Keliling : 4 x s\n" +
+"Luas : s x s (s2)\n" +
+"Keterangan: S = sisi.");
+        ta.setText(super.getJelas());
+    }
+
+      
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,14 +73,14 @@ public class Persegi extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        sisi = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
+        keliling = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        luas = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        ta = new javax.swing.JTextArea();
         jLabel6 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
@@ -47,9 +90,14 @@ public class Persegi extends javax.swing.JPanel {
 
         jLabel2.setText("Masukkan Sisi");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        sisi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                sisiActionPerformed(evt);
+            }
+        });
+        sisi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                sisiKeyTyped(evt);
             }
         });
 
@@ -60,9 +108,9 @@ public class Persegi extends javax.swing.JPanel {
             }
         });
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        keliling.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                kelilingActionPerformed(evt);
             }
         });
 
@@ -70,9 +118,9 @@ public class Persegi extends javax.swing.JPanel {
 
         jLabel5.setText("Luas");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        ta.setColumns(20);
+        ta.setRows(5);
+        jScrollPane1.setViewportView(ta);
 
         jLabel6.setText("Penjelasan");
 
@@ -89,7 +137,7 @@ public class Persegi extends javax.swing.JPanel {
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sisi, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(8, 8, 8)
                                         .addComponent(jLabel1))))
@@ -101,8 +149,8 @@ public class Persegi extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField2)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
+                                        .addComponent(keliling)
+                                        .addComponent(luas, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE))
                                     .addComponent(jLabel6))))
                         .addContainerGap(93, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -115,7 +163,7 @@ public class Persegi extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(10, 10, 10)
                 .addComponent(jButton1)
@@ -126,9 +174,9 @@ public class Persegi extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(keliling, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(9, 9, 9)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(luas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -137,17 +185,35 @@ public class Persegi extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void sisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sisiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_sisiActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       
+       if(sisi.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");  
+        }
+        datar b = new datar();
+         b.tampil();
+        abstrak a = new datar();
+        a.keliling();
+        a.luas();
+      
+        sisi.setText("");
+         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void kelilingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kelilingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_kelilingActionPerformed
+
+    private void sisiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sisiKeyTyped
+        if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      }
+    }//GEN-LAST:event_sisiKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -159,9 +225,9 @@ public class Persegi extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField keliling;
+    private javax.swing.JTextField luas;
+    private javax.swing.JTextField sisi;
+    private javax.swing.JTextArea ta;
     // End of variables declaration//GEN-END:variables
 }

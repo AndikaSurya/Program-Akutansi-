@@ -129,11 +129,13 @@
     <Component class="javax.swing.JTextField" name="tinggi">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tinggiActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tinggiKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="jari">
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jariActionPerformed"/>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jariKeyTyped"/>
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="phi">
@@ -149,6 +151,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Hasil"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>

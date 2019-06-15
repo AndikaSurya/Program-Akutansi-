@@ -1,4 +1,8 @@
 package bangun;
+
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -16,6 +20,63 @@ public class PrismaSegitiga extends javax.swing.JPanel {
      */
     public PrismaSegitiga() {
         initComponents();
+    }
+     private class bangun extends Inisial
+    {
+DecimalFormat df = new DecimalFormat("0.00"); 
+        @Override
+        void volume() {
+          setSisi(Double.parseDouble(tinggis.getText()));
+          setTinggi(Double.parseDouble(tinggi.getText()));
+          setSisi1(Double.parseDouble(alas.getText()));
+          double all = (0.5*getSisi1()*getTinggi()*getSisi());
+          volume.setText(df.format(all));
+          
+        }
+
+        @Override
+        void luas() {
+             setSisi(Double.parseDouble(tinggis.getText()));
+          setTinggi(Double.parseDouble(tinggi.getText()));
+          setSisi1(Double.parseDouble(alas.getText()));
+          double all = (2*0.5*getSisi1()*getSisi())+ (3*getSisi1()*getTinggi());
+          luas.setText(df.format(all));
+        }
+        
+        void tampil()
+        {
+            super.setJelas("Merupakan bangun yang dibatasi oleh 6 sisi yang mempunyai ukuran panjang dan lebar\n" +
+"\n" +
+"Ciri-ciri PRISMA, antara lain:\n" +
+"Ø  Prisma merupakan bangun ruang yang alas dan atasnya kongruen dan sejajar,\n" +
+"Ø  Rusuk prisma alas dan atas yang berhadapan sama dan sejajar,\n" +
+"Ø  Rusuk tegak prisma sama dan sejajar,\n" +
+"Ø  Rusuk tegak prisma tegak lurus dengan alas dan atas prisma,\n" +
+"Ø  Rusuk tegak prisma disebut juga tinggi prisma,\n" +
+"Ø  Prisma terdiri dari prisma segitiga dan prisma beraturan.\n" +
+"Ø  Prisma segitiga mempunyai bidang alas dan bidang atas berupa segitiga yang kongruen.\n" +
+"Ø  Prisma segitiga mempunyai 5 sisi.\n" +
+"Ø  Prisma segitiga mempunyai  9 rusuk\n" +
+"Ø  Prisma segitiga mempunyai 6 titik sudut\n" +
+"Ø  Jaring-jaring prisma segitiga berupa 2 segitiga, dan 3 persegi panjang.\n" +
+"\n" +
+"\n" +
+"\n" +
+"\n" +
+"Rumus Luas Permukaan Prisma Segitiga\n" +
+"L  =  Keliling ∆  x  t  x ( 2 x Luas ∆)\n" +
+"L          :  luas permukaan\n" +
+"∆          :  alas dan atas segitiga\n" +
+"t           :  tinggi prisma\n" +
+"\n" +
+"Volume Prisma Segitiga\n" +
+"V  =  Luas Alas  x  t \n" +
+"V                 :  Volume\n" +
+"Luas Alas  :  Luas ∆   =  ( ½ a x t )\n" +
+"t                  :  tinggi prisma");
+            ta.setText(super.getJelas());
+        }
+        
     }
 
     /**
@@ -40,7 +101,7 @@ public class PrismaSegitiga extends javax.swing.JPanel {
         jLabel11 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ta = new javax.swing.JTextArea();
-        Volume = new javax.swing.JTextField();
+        volume = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -59,16 +120,31 @@ public class PrismaSegitiga extends javax.swing.JPanel {
                 tinggiActionPerformed(evt);
             }
         });
+        tinggi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tinggiKeyTyped(evt);
+            }
+        });
 
         tinggis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tinggisActionPerformed(evt);
             }
         });
+        tinggis.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tinggisKeyTyped(evt);
+            }
+        });
 
         alas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 alasActionPerformed(evt);
+            }
+        });
+        alas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                alasKeyTyped(evt);
             }
         });
 
@@ -92,10 +168,10 @@ public class PrismaSegitiga extends javax.swing.JPanel {
         ta.setRows(5);
         jScrollPane1.setViewportView(ta);
 
-        Volume.setEditable(false);
-        Volume.addActionListener(new java.awt.event.ActionListener() {
+        volume.setEditable(false);
+        volume.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VolumeActionPerformed(evt);
+                volumeActionPerformed(evt);
             }
         });
 
@@ -124,15 +200,14 @@ public class PrismaSegitiga extends javax.swing.JPanel {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(luas, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Volume, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(volume, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel11)))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(37, 37, 37)
-                                .addComponent(tinggi, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(jLabel1))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(tinggi, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -166,7 +241,7 @@ public class PrismaSegitiga extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(Volume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(volume, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11)
                 .addGap(18, 18, 18)
@@ -191,17 +266,53 @@ public class PrismaSegitiga extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_luasActionPerformed
 
-    private void VolumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolumeActionPerformed
+    private void volumeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volumeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_VolumeActionPerformed
+    }//GEN-LAST:event_volumeActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+       if(alas.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");  
+        }
+ else if(tinggi.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");  
+        }
+       else if(tinggis.getText().trim().isEmpty()){
+         JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");  
+        }
+        bangun a = new bangun();
+    a.tampil();
+    Inisial i = new bangun();
+    i.luas();
+    i.volume();
+    tinggis.setText("");
+    tinggi.setText("");
+    alas.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void alasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_alasKeyTyped
+if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      }
+    }//GEN-LAST:event_alasKeyTyped
+
+    private void tinggisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tinggisKeyTyped
+      if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      }
+    }//GEN-LAST:event_tinggisKeyTyped
+
+    private void tinggiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tinggiKeyTyped
+      if(Character.isAlphabetic(evt.getKeyChar())){
+            evt.consume();
+            JOptionPane.showMessageDialog(null,"Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka"); 
+      }
+    }//GEN-LAST:event_tinggiKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Volume;
     private javax.swing.JTextField alas;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
@@ -216,5 +327,6 @@ public class PrismaSegitiga extends javax.swing.JPanel {
     private javax.swing.JTextArea ta;
     private javax.swing.JTextField tinggi;
     private javax.swing.JTextField tinggis;
+    private javax.swing.JTextField volume;
     // End of variables declaration//GEN-END:variables
 }
