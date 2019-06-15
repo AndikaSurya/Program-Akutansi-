@@ -35,14 +35,14 @@ public class Segitiga extends javax.swing.JPanel {
 
         }
 
-        @Override
+        @Override 
         void keliling() {
             double jumlah;
             setSisi(Double.parseDouble(sisiA.getText()));
             setSisi2(Double.parseDouble(sisiM.getText()));
             setSisi3(Double.parseDouble(sisiM2.getText()));
             jumlah = getSisi() + getSisi2() + getSisi3();
-            keliling.setText(df.format(jumlah));
+            keliling.setText(df.format(jumlah)); 
         }
 
         void tampil() {
