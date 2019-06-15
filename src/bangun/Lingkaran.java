@@ -1,4 +1,9 @@
 package bangun;
+
+import static java.lang.Math.PI;
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,6 +22,48 @@ public class Lingkaran extends javax.swing.JPanel {
     public Lingkaran() {
         initComponents();
     }
+      DecimalFormat df = new DecimalFormat("0.00");
+     public class datar extends abstrak {
+
+        @Override
+        void luas() {
+            double jumlah;
+            setJari(Double.parseDouble(jari.getText()));   
+            jumlah = PI*Math.pow(getJari(), 2);
+            luas.setText(df.format(jumlah));
+        }
+
+        @Override
+        void keliling() {
+            double jumlah;
+            setJari(Double.parseDouble(jari.getText()));
+            jumlah = 2 * PI * getJari() ;
+            keliling.setText(df.format(jumlah));
+        }
+
+        void tampil() {
+            super.setJelas("Lingkaran adalah himpunan semua titik di bidang datar yang berjarak sama dari suatu titik tetap di bidang tersebut. sehingga memiliki sifat-sifat berikut:\n"
+                    + "\n"
+                    + "a. Jarak dari titik pusat ke tepi lingkaran dinamakan jari-jari (r),\n"
+                    + "\n"
+                    + "\n"
+                    + "b. Lingkaran mempunyai jari-jari (r), yang panjangnya setengah dari diameter (d),\n"
+                    +"\n"
+                    +"\n"
+                    +"c. Lingkaran mempunyai sebuah titik pusat. \n"
+                    +"\n"
+                    +"\n"
+                    + "\n  Rumus Luas Lingakaran \n Luas Lingkaran  ABCD:\n"
+                    + "\n"
+                    + "L = PI x r x r\n"
+                    + "\n"
+                    + "\n Rumus Keliling Lingkaran \n K = 2 x PI x r\n"
+                    + "\n"
+                    + "K = 2 x (AB + BC)\n"
+                    +"Keterangan: \n PI = 3,14 \n r = jari-jari\n");
+            ta.setText(super.getJelas());
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,60 +76,82 @@ public class Lingkaran extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        jari = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        phi = new javax.swing.JTextField();
+        hasil = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        luas = new javax.swing.JTextField();
+        keliling = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        ta = new javax.swing.JTextArea();
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Lingkaran");
 
         jLabel2.setText("Masukkan Jari - jari ");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        jari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                jariActionPerformed(evt);
+            }
+        });
+        jari.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jariKeyTyped(evt);
             }
         });
 
         jLabel3.setText("Masukkan phi");
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        phi.setEditable(false);
+        phi.setText("3.14");
+        phi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                phiActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Hasil");
+        hasil.setText("Hasil");
+        hasil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hasilActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Keliling");
 
         jLabel5.setText("Luas");
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        luas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                luasActionPerformed(evt);
+            }
+        });
+        luas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                luasKeyTyped(evt);
             }
         });
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        keliling.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                kelilingActionPerformed(evt);
+            }
+        });
+        keliling.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                kelilingKeyTyped(evt);
             }
         });
 
         jLabel6.setText("Penjelasan");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        ta.setColumns(20);
+        ta.setRows(5);
+        jScrollPane1.setViewportView(ta);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -114,12 +183,12 @@ public class Lingkaran extends javax.swing.JPanel {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(keliling, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(luas, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGap(48, 86, Short.MAX_VALUE))
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(phi, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jari, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -130,21 +199,21 @@ public class Lingkaran extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jari, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(phi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                .addComponent(hasil)
                 .addGap(15, 15, 15)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(keliling, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(luas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -153,25 +222,55 @@ public class Lingkaran extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void jariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jariActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jariActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void phiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_phiActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void luasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_luasActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void kelilingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kelilingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_kelilingActionPerformed
+
+    private void hasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hasilActionPerformed
+        // TODO add your handling code here:
+        if (jari.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");
+        } 
+        datar a = new datar();
+        a.tampil();
+        abstrak b = new datar();
+        b.luas();
+        b.keliling();
+        jari.setText("");
+        
+    }//GEN-LAST:event_hasilActionPerformed
+
+    private void kelilingKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_kelilingKeyTyped
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_kelilingKeyTyped
+
+    private void luasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_luasKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_luasKeyTyped
+
+    private void jariKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jariKeyTyped
+        // TODO add your handling code here:
+        if (Character.isAlphabetic(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka");}
+    }//GEN-LAST:event_jariKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton hasil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -179,10 +278,10 @@ public class Lingkaran extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jari;
+    private javax.swing.JTextField keliling;
+    private javax.swing.JTextField luas;
+    private javax.swing.JTextField phi;
+    private javax.swing.JTextArea ta;
     // End of variables declaration//GEN-END:variables
 }

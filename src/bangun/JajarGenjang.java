@@ -1,4 +1,8 @@
 package bangun;
+
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,6 +21,64 @@ public class JajarGenjang extends javax.swing.JPanel {
     public JajarGenjang() {
         initComponents();
     }
+     DecimalFormat df = new DecimalFormat("0.00");
+
+    public class datar extends abstrak {
+
+        @Override
+        void luas() {
+            double jumlah;
+            setSisi(Double.parseDouble(sisi.getText()));   
+            setTinggi(Double.parseDouble(tinggi.getText()));
+            jumlah = getSisi()*getTinggi();
+            luas.setText(df.format(jumlah));
+
+        }
+
+        @Override
+        void keliling() {
+            double jumlah;
+            setSisi(Double.parseDouble(sisi.getText()));
+            setSisi2(Double.parseDouble(sisiKanan.getText()));
+            setSisi3(Double.parseDouble(sisiKiri.getText()));
+            setSisi4(Double.parseDouble(sisiAtas.getText()));
+            jumlah = getSisi() + getSisi2() + getSisi3() + getSisi4() ;
+            keliling.setText(df.format(jumlah));
+        }
+
+        void tampil() {
+            super.setJelas("Jajar genjang atau biasa di sebut juga dengan jajaran genjang ( parallelogram ) merupakan sebuah bangun datar dua dimensi yang terbentuk oleh dua buah pasang rusuk yang sama panjang dan sejajar dengan pasangannya, serta mempunyai dua buah pasang sudut yang masing-masing besarnya sama dengan sudut di depannya. sehingga memiliki sifat-sifat berikut:\n"
+                    + "\n"
+                    + "a. Sisi-sisi yang berhadapan di setiap bangun jajar genjang selalu sama panjangnya serta sejajar,\n"
+                    + "\n"
+                    + "\n"
+                    + "b. Sudut-sudut yang berhadapan di setiap bangun jajar genjang sama besarnya,\n"
+                    +"\n"
+                    +"\n"
+                    +"c. Jumlah dua besar sudut yang berdekatan di setiap bangun jajar genjang adalah 180 derajat, \n"
+                    +"\n"
+                    +"\n"
+                    +"d. Di setiap bangun jajar genjang kedua diagonal yang saling membagi dua sama panjangnya,\n"
+                    +"\n"
+                    +"\n"
+                    +"e. Memiliki simetri putar tingkat dua dan tidak mempunyai simetri lipat, \n"
+                    +"\n"
+                    +"\n"
+                    +"f Memiliki dua buah sudut tumpul dan dua buah sudut lancip,\n"
+                    +"\n"
+                    +"\n"
+                    +"g. Jumlah semua sudut yang di miliki jajaran genjang adalah 360 derajat.\n"
+                    + "\n  Rumus Luas Jajar Genjang \n Luas Jajar  ABCD:\n"
+                    + "\n"
+                    + "L = alas x tinggi"
+                    + "\n"
+                    + "\n Rumus Keliling Belah Ketupat \n K = AB + BC + CD + AD\n"
+                    + "\n"
+                    + "K = 2 x (AB + BC)\n"
+                    +"Keterangan: \n AB = sisi alas \n BC = sisi kanan");
+            ta.setText(super.getJelas());
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,16 +93,22 @@ public class JajarGenjang extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        sisi = new javax.swing.JTextField();
+        tinggi = new javax.swing.JTextField();
+        hasil = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        luas = new javax.swing.JTextField();
+        keliling = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        ta = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        sisiKanan = new javax.swing.JTextField();
+        sisiKiri = new javax.swing.JTextField();
+        sisiAtas = new javax.swing.JTextField();
 
         jTextField3.setText("jTextField3");
 
@@ -51,35 +119,85 @@ public class JajarGenjang extends javax.swing.JPanel {
 
         jLabel3.setText("Masukkan Tinggi ");
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        sisi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                sisiActionPerformed(evt);
+            }
+        });
+        sisi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                sisiKeyTyped(evt);
             }
         });
 
-        jButton1.setText("Hasil");
+        tinggi.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tinggiKeyTyped(evt);
+            }
+        });
+
+        hasil.setText("Hasil");
+        hasil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hasilActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Keliling");
 
         jLabel5.setText("Luas");
 
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        luas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                luasActionPerformed(evt);
             }
         });
 
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        keliling.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                kelilingActionPerformed(evt);
             }
         });
 
         jLabel6.setText("Penjelasan");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        ta.setColumns(20);
+        ta.setRows(5);
+        jScrollPane1.setViewportView(ta);
+
+        jLabel7.setText("Masukkan Sisi Kanan ");
+
+        jLabel8.setText("Masukkan Sisi Kiri ");
+
+        jLabel9.setText("Masukkan Sisi Atas ");
+
+        sisiKanan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sisiKananActionPerformed(evt);
+            }
+        });
+        sisiKanan.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                sisiKananKeyTyped(evt);
+            }
+        });
+
+        sisiKiri.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                sisiKiriKeyTyped(evt);
+            }
+        });
+
+        sisiAtas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sisiAtasActionPerformed(evt);
+            }
+        });
+        sisiAtas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                sisiAtasKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -92,26 +210,36 @@ public class JajarGenjang extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel4))
-                                .addGap(81, 81, 81)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel1)))
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel7))
+                                .addGap(68, 68, 68)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(sisiKiri)
+                                    .addComponent(tinggi, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                                    .addComponent(keliling, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                                    .addComponent(luas, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                                    .addComponent(sisi, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                                    .addComponent(hasil, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(sisiKanan)
+                                    .addComponent(sisiAtas)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(171, 171, 171)
-                                .addComponent(jLabel6)))
+                                .addGap(210, 210, 210)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel6))))
                         .addGap(0, 71, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -121,56 +249,139 @@ public class JajarGenjang extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(sisi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(sisiKanan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(sisiKiri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(sisiAtas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
+                    .addComponent(tinggi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addComponent(hasil)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(keliling, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(luas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
                 .addComponent(jLabel6)
-                .addGap(1, 1, 1)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 171, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void sisiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sisiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_sisiActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void luasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_luasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_luasActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void kelilingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kelilingActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_kelilingActionPerformed
+
+    private void sisiKananActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sisiKananActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sisiKananActionPerformed
+
+    private void sisiAtasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sisiAtasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sisiAtasActionPerformed
+
+    private void hasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hasilActionPerformed
+        // TODO add your handling code here:
+        if (sisi.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");
+        } else if (sisiKanan.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");
+        } else if (sisiKiri.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");
+        }else if (sisiAtas.getText().trim().isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Maaf ada form yang belum terisi");}
+        JajarGenjang.datar a = new JajarGenjang.datar();
+        a.tampil();
+        abstrak b = new JajarGenjang.datar();
+        b.luas();
+        b.keliling();
+        sisi.setText("");
+        sisiKanan.setText("");
+        sisiKiri.setText("");
+        sisiAtas.setText("");
+        tinggi.setText("");
+    }//GEN-LAST:event_hasilActionPerformed
+
+    private void sisiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sisiKeyTyped
+        // TODO add your handling code here:
+        if (Character.isAlphabetic(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka");}
+    }//GEN-LAST:event_sisiKeyTyped
+
+    private void sisiKananKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sisiKananKeyTyped
+        // TODO add your handling code here:
+        if (Character.isAlphabetic(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka");}
+    }//GEN-LAST:event_sisiKananKeyTyped
+
+    private void sisiKiriKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sisiKiriKeyTyped
+        // TODO add your handling code here:
+        if (Character.isAlphabetic(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka");}
+    }//GEN-LAST:event_sisiKiriKeyTyped
+
+    private void sisiAtasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_sisiAtasKeyTyped
+        // TODO add your handling code here:
+        if (Character.isAlphabetic(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka");}
+    }//GEN-LAST:event_sisiAtasKeyTyped
+
+    private void tinggiKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tinggiKeyTyped
+        // TODO add your handling code here:
+        if (Character.isAlphabetic(evt.getKeyChar())) {
+            evt.consume();
+            JOptionPane.showMessageDialog(null, "Pada Kolom Jumlah Hanya Bisa Memasukan Karakter Angka");}
+    }//GEN-LAST:event_tinggiKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton hasil;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField keliling;
+    private javax.swing.JTextField luas;
+    private javax.swing.JTextField sisi;
+    private javax.swing.JTextField sisiAtas;
+    private javax.swing.JTextField sisiKanan;
+    private javax.swing.JTextField sisiKiri;
+    private javax.swing.JTextArea ta;
+    private javax.swing.JTextField tinggi;
     // End of variables declaration//GEN-END:variables
 }

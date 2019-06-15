@@ -22,7 +22,9 @@ public abstract  class abstrak {
     private double jari;
     private double sisi;
     private double sisi2;
-
+    private double sisi3;
+    private double sisi4;
+    
    
     
     public abstrak(String jelas)
@@ -132,6 +134,21 @@ public abstract  class abstrak {
      */
     public void setSisi2(double sisi2) {
         this.sisi2 = sisi2;
+    }
+        public double getSisi3() {
+        return sisi3;
+    }
+
+    public void setSisi3(double sisi3) {
+        this.sisi3 = sisi3;
+    }
+
+    public double getSisi4() {
+        return sisi4;
+    }
+
+    public void setSisi4(double sisi4) {
+        this.sisi4 = sisi4;
     }
 
     /**
