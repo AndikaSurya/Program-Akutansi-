@@ -20,6 +20,7 @@ public class Kerucut extends javax.swing.JPanel {
      */
     public Kerucut() {
         initComponents();
+        
     }
       private class bangun extends Inisial
     {
